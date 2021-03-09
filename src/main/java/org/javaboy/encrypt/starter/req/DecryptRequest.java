@@ -37,7 +37,7 @@ public class DecryptRequest extends RequestBodyAdviceAdapter {
     }
 
     @Override
-    public HttpInputMessage beforeBodyRead(HttpInputMessage inputMessage, MethodParameter parameter, Type targetType, Class<? extends HttpMessageConverter<?>> converterType) throws IOException {
+    public HttpInputMessage beforeBodyRead(final HttpInputMessage inputMessage, MethodParameter parameter, Type targetType, Class<? extends HttpMessageConverter<?>> converterType) throws IOException {
         byte[] body = new byte[inputMessage.getBody().available()];
         inputMessage.getBody().read(body);
         try {
